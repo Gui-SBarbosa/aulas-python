@@ -12,5 +12,6 @@ lista = [10, 20, 30, 40]
 lista.append(40)
 lista.append(50)
 lista.append(60)
+lista.append(70)
 lista.pop()
 print(lista)
