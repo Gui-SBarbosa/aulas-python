@@ -20,12 +20,12 @@ for item in enumerate(lista):
 
 
 
- try:
-            indice = int(indice_str)
-            del lista[indice]
-        except ValueError:
-            print('Por favor digite número int.')
-        except IndexError:
-            print('Índice não existe na lista')
-        except Exception:
-            print('Erro desconhecido')
+# try:
+#     indice = int(indice_str)
+#     del lista[indice]
+#     except ValueError:
+#             print('Por favor digite número int.')
+#     except IndexError:
+#         print('Índice não existe na lista')
+#     except Exception:
+#         print('Erro desconhecido')
