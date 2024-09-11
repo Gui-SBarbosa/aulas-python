@@ -24,52 +24,33 @@ O primeiro dígito do CPF é 7
 """
 #   Que codigo podre
 #   Odeio minha vida
-cpf = input("Digite os noves primeiros digitos do seu cpf: ")
-
+cpf_enviado = "746.824.890-70" \
+    .replace('.', '') \
+    .replace('-', '') \
+    .replace(' ', '')
+cpf_9 = cpf_enviado[:9]
 i = 10
-lista = []
 
-for numb in cpf:
-    numb = int(numb)
-    resultado = numb * i
-    lista.append(resultado)
+resultado_digito_1 = 0
+for numero in cpf_9:
+    resultado_digito_1 += int(numero) * i
     i -= 1
+primeiro_valor = (resultado_digito_1 * 10) % 11
+primeiro_valor = primeiro_valor if primeiro_valor <= 9 else 0
 
-sum_valor = 0
+cpf_10 = cpf_9 + str(primeiro_valor)
+i2 = 11
 
-for valor in lista:
-    sum_valor += valor
+resultado_digito_2 = 0
+for numero in cpf_10:
+    resultado_digito_2 += int(numero) * i
+    i2 -= 1
+segundo_valor = (resultado_digito_2 * 10) % 11
+segundo_valor = segundo_valor if segundo_valor <= 9 else 0
 
-resultado_valor = sum_valor * 10 % 11
+cpf_verificado = f'{cpf_9}{primeiro_valor}{segundo_valor}'
 
-if resultado_valor > 9:
-    primeiro_valor = 0
+if cpf_verificado == cpf_enviado:
+    print(f"{cpf_enviado} é Válido!")
 else:
-    primeiro_valor = resultado_valor
-
-lista2 = [cpf]
-lista2.append(str(primeiro_valor))
-i = 11
-
-lista3 = []
-
-for numero in lista2:
-    for numero in numero:
-        numero = int(numero)
-        resultado_2 = numero * i
-        lista3.append(resultado_2)
-        i -= 1
-
-sum_valor_2 = 0
-
-for valor2 in lista3:
-    sum_valor_2 += valor2
-
-resultado_valor2 = sum_valor_2 % 11
-
-if resultado_valor2 < 2:
-    segundo_valor = 0
-else:
-    segundo_valor = 11 - resultado_valor2
-
-print(f'{cpf}-{primeiro_valor}{segundo_valor}')
+    print("CPF é Inválido!")
