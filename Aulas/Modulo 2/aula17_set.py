@@ -19,13 +19,14 @@
 # - não garantem ordem;
 # - são iteráveis (for, in, not in)
 
-# s1 = {1, 2, 3, 3, 3, 3, 3}
-# l1 = [1, 2, 3, 3, 3, 3, 3]
+s1 = {1, 2, 3, 3, 3, 3, 3}
+l1 = [1, 2, 3, 3, 3, 3, 3]
 # s1 = set(l1)
 # l2 = list(s1)
 # s1 = set('Guilherme')
 # s1 = {1, 2, 3}
-# print(s1)
+print(s1)
+print(l1)
 
 # Métodos úteis:
 # add, update, clear, discard
@@ -43,10 +44,20 @@
 # intersecção & (intersection) - Itens presentes em ambos
 # diferença - Itens presentes apenas no set da esquerda
 # diferença simétrica ^ - Itens que não estão em ambos
-s1 = {1, 2, 3}
-s2 = {2, 3, 4}
-s3 = s1 | s2
-s3 = s1 & s2
-s3 = s1 - s2
-s3 = s1 ^ s2
-print(s3)
+# s1 = {1, 2, 3}
+# s2 = {2, 3, 4}
+# s3 = s1 | s2
+# s3 = s1 & s2
+# s3 = s1 - s2
+# s3 = s1 ^ s2
+# print(s3)
+
+#   Exemplode de uso dos sets
+# letras = set()
+# while True:
+#     letra = input('Digite: ')
+#     letras.add(letra)
+#     if 'l' in letras:
+#         print('Parabéns')
+#         break
+#     print(letras)
